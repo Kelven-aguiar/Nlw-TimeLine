@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import ptBR from "dayjs/locale/pt-br";
 import Image from "next/image";
 import Link from "next/link";
+import DeleteMemoryButton from "@/components/DeleteMemoryButton";
 
 dayjs.locale(ptBR);
 
@@ -53,12 +54,7 @@ export default async function MemoryPage({
 				<Link href="/" className="text-sm text-gray-200 hover:text-gray-100">
 					Voltar para memórias
 				</Link>
-				<button
-					type="submit"
-					className="inline-block self-end rounded-full bg-red-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-red-600"
-				>
-					Deletar memoria
-				</button>
+				<DeleteMemoryButton memoryId={id} token={token} />
 			</div>
 		);
 	} catch (error) {
